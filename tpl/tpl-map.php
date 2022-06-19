@@ -6,11 +6,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
     <title>Add Locations On Map</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 
-    <link rel="stylesheet" href="assets/css/leaflet.css"/>
-    <script src="assets/js/leaflet.js"></script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/leaflet.css <?= "?v" .rand(99,9999999) ?>"/>
+    <script src="assets/js/leaflet.js  <?= "?v" .rand(99,9999999) ?>"></script>
 	
 </head>
 <body>
@@ -23,20 +22,8 @@
         <div id="map"></div>
         </div>
     </div>
-<script>
-
-	var map = L.map('map').setView([37.291782, 49.594491], 17);
-
-	var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-		maxZoom: 19,
-		attribution: 'Arezoo Kharras; <a href="https://www.linkedin.com/in/arezoo-kharras-094018231/">Map Project</a>'
-	}).addTo(map);
-
-    document.getElementById('map').style.setProperty('height',window.innerHeight+'px');
-
-</script>
 
 
-
+<script src="assets/js/scripts.js  <?= "?v" .rand(99,9999999) ?>"></script>
 </body>
 </html>
