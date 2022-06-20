@@ -47,8 +47,27 @@ const defaultZoom = 17;
     //      5: review locations and verify if ok
    });
 
-    setTimeout(function() {
+    // setTimeout(function() {
        
-    },3000);
+    // },3000);
 
- 
+ var currentPosition , currentAccuracy ;
+ map.on('locationfound', function(e){
+    if(currentPosition){
+        map.removeLayer(currentPosition);
+        map.removeLayer(currentAccuracy);
+    }
+    var radius = e.accuracy;
+    currentPosition = L.marker(e.latlng).addTo(map)
+    .bindPopup("you are within " + radius + " meters from this point").openPopup();
+    currentAccuracy = L.circle(e.latlng).addTo(map);
+ });
+ map.on('locationerror',function(e){
+    alert(e.message);
+});
+
+function locate(){
+    map.locate({ setView: true , maxZoom: defaultZoom});
+}
+
+setInterval(locate, 5000);

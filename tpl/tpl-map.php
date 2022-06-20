@@ -8,8 +8,8 @@
     <title>Add Locations On Map</title>
 
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/leaflet.css <?= "?v" .rand(99,9999999) ?>"/>
-    <script src="assets/js/leaflet.js  <?= "?v" .rand(99,9999999) ?>"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"></script>
 	
 </head>
 <body>
