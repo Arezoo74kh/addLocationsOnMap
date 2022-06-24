@@ -71,3 +71,89 @@ html,body,.mapContainer {
     outline: 0;
 }
 
+/* modal style */
+
+  
+  /* Modal Overlay Styles */
+
+.modal-overlay {
+    position: fixed;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.7);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.modal-overlay .modal {
+    width: 50%;
+    background: #fff;
+    padding: 20px;
+    border-radius: 7px;
+    margin-top: -100px;
+    position: relative;
+}
+
+.modal-overlay .modal .close {
+    position: absolute;
+    top: 7px;
+    left: 15px;
+    color: #a90909;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.modal-overlay .modal h3.modal-title {
+    padding: 0;
+    margin: 0 0 30px 0;
+}
+
+.modal-overlay .modal h3.modal-content {}
+
+.field-row {
+    margin: 10px 0;
+}
+
+.field-row::after {
+    content: ' ';
+    display: block;
+    clear: both;
+    width: 100%;
+}
+
+.field-row div.field-title {
+    width: 20%;
+    float: right;
+}
+
+.field-row div.field-content {
+    width: 80%;
+    float: right;
+}
+
+.field-row textarea,
+.field-row select,
+.field-row input {
+    line-height: 36px;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid #e7e7e7;
+    font-size: 16px;
+    font-weight: 400;
+    width: 97%;
+}
+
+input[type="submit"] {
+    background: #007bec;
+    color: #fff;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    opacity: 0.7;
+}

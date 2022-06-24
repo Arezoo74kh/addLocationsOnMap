@@ -39,11 +39,16 @@ const defaultZoom = 17;
 
     map.on('dblclick', function(event){
     // alert(event.latlng.lat + "," + event.latlng.lng);
-    // L.marker([event.latlng.lat, event.latlng.lng]).addTo(map);
     //      1: add marker in clicked position 
+    L.marker([event.latlng.lat, event.latlng.lng]).addTo(map);
     //      2: open modal (form) for save the clicked location
-    //      3: fill the form and submit location data to server
-    //      4: save location in database (status: pending review)
+    $('.modal-overlay').fadeIn(500)
+    $('#lat-display').val(event.latlng.lat)
+    $('#lng-display').val(event.latlng.lng)
+    $('#l-type').val(0);
+    $('#l-title').val(" ");
+    //      3: done: fill the form and submit location data to server
+    //      4: done: save location in database (status: pending review)
     //      5: review locations and verify if ok
    });
 
@@ -70,4 +75,25 @@ function locate(){
     map.locate({ setView: true , maxZoom: defaultZoom});
 }
 
-setInterval(locate, 5000);
+// setInterval(locate, 5000);
+
+$(document).ready(function() {
+    $('form#addLocationForm').submit(function(e){
+        e.preventDefault(); //prevent from submiting
+        // alert($(this).serialize()); 
+        var form = $(this);
+        var resultTag = form.find('.ajax-result');
+        $.ajax({
+            url: form.attr('action'),
+            method: form.attr('method'),
+            data: form.serialize(),
+            success: function(response){
+                resultTag.html(response);
+            }
+        });
+    });
+
+    $('.modal-overlay .close').click(function() {
+        $('.modal-overlay').fadeOut();
+    });
+});
