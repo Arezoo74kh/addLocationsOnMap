@@ -23,7 +23,7 @@
         die();
     }
 
-    function massage($msg,$cssClass = 'info'){
+    function message($msg,$cssClass = 'info'){
         echo "<div class= '$cssClass' style='padding:20px;width:80%;margin:10px auto;background: #f9dede;border:1mpx solid #cca4a4;color:red;border-radius:5px'>$msg</div>";
     }
 
