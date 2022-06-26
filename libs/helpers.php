@@ -28,7 +28,7 @@
     }
 
     function dd($var){
-        echo "<pre style='color: #c46a10; position: relative; background: #ffff; z-index: 999; padding: 10px; margin: 10px; border-radius: 5px; border-left: 5px solid #c56705;'>";
+        echo "<pre style='text-align: left; direction: ltr; color: #c46a10; position: relative; background: #ffff; z-index: 999; padding: 10px; margin: 10px; border-radius: 5px; border-left: 5px solid #c56705;'>";
         var_dump($var);
         echo "</pre>";
     }

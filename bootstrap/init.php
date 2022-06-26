@@ -12,6 +12,7 @@ try {
 
 include BASE_PATH . "libs/libLocations.php";
 include BASE_PATH . "libs/libUsers.php";
+include BASE_PATH . "vendor/autoload.php";
 
 // echo "Connection to database is OK!";
 

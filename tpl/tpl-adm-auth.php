@@ -46,7 +46,7 @@
 </head>
 <body>
     <div class="main-panel">
-    <h1>ورود به پنل مدیریت <span style="color:#007bec">سون مپ</span></h1>
+    <h1>ورود به پنل مدیریت <span style="color:#007bec">مکان ها</span></h1>
         <div class="box">
             <form action="adm.php" method="post">
                 <input type="text" name="username" placeholder="Username" autocomplete="off"><br>

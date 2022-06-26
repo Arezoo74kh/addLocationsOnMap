@@ -13,6 +13,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 }
 
 if(isloggedin()){
+    $params = $_GET ?? [];
+    $locations = getLocations($params);
+    // dd($locations);
     include "tpl/tpl-adm.php";
 }else{
     include "tpl/tpl-adm-auth.php";
