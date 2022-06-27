@@ -19,3 +19,19 @@ function getLocations($params = []){
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_OBJ);
 }
+
+function getLocation($id){
+    global $pdo;
+    $sql = "SELECT * FROM `locations` where id = :id";
+    $stmt =$pdo->prepare($sql);
+    $stmt->execute([':id' => $id]);
+    return $stmt->fetch(PDO::FETCH_OBJ);
+}
+
+function toggleStatus($id){
+    global $pdo;
+    $sql = "UPDATE `locations` SET verified = 1 - verified WHERE id = :id";
+    $stmt =$pdo->prepare($sql);
+    $stmt->execute([':id' => $id]);
+    return $stmt->rowCount();
+}

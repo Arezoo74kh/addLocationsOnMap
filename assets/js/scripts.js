@@ -18,8 +18,8 @@ const defaultZoom = 17;
     // marker = L.marker(defaultLocation).addTo(map);
     // marker.bindPopup("Arezoo office 1").openPopup();
 
-    L.marker(defaultLocation).addTo(map).bindPopup("Arezoo Office 1").openPopup();
-    L.marker([37.291982, 49.595691]).addTo(map).bindPopup("Arezoo Office 2");
+    // L.marker(defaultLocation).addTo(map).bindPopup("Arezoo Office 1").openPopup();
+    // L.marker([37.291982, 49.595691]).addTo(map).bindPopup("Arezoo Office 2");
 
     var northLine = map.getBounds().getNorth();   // khat shomali
     var westLine = map.getBounds().getWest();     // khat gharbi

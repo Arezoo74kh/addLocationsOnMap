@@ -140,8 +140,25 @@
     $(document).ready(function() {
         $('.preview').click(function() {
             $('.modal-overlay').fadeIn();
-            $('#mapWivdow').attr('src','<?=BASE_URL?>');
+            $('#mapWivdow').attr('src','<?=BASE_URL?>?loc=' + $(this).attr('data-loc'));
         });
+
+        $('.statusToggle').click(function() {
+           const btn = $(this);
+           const locid = btn.attr('data-loc');
+           $.ajax({
+              url: '<?=BASE_URL . 'process/statusToggle.php'?>',
+              method: 'POST',
+              data: {loc:locid},
+              success: function(response){
+                // alert(response);
+                if(response == 1){
+                    btn.toggleClass('active')
+                }
+              }
+           });
+        });
+
         $('.modal-overlay .close').click(function() {
             $('.modal-overlay').fadeOut();
         });
