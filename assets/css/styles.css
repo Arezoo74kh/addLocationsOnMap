@@ -41,7 +41,19 @@ html,body,.mapContainer {
     left: 0;
     bottom: 0;
     z-index: 1;
+    padding: 0;
+    margin: 0;
+    direction: rtl;
+    text-align: right;
 }
+
+* {
+    font-family: sahel;
+}
+
+*:focus {
+    outline: none;
+} 
 
 #map {
     position: relative;
@@ -155,5 +167,73 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
+    opacity: 0.7;
+}
+
+/* Search Box new */
+
+.clear {
+    clear: both;
+}
+
+.search-box {
+    width: fit-content;
+}
+
+.search-results {
+    margin: -3px 50px 0 0;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px 12px;
+    border-radius: 0 0 10px 10px;
+    border: 1px solid #d9d7d4;
+}
+
+.result-item {
+    padding: 10px 5px;
+    border-bottom: 0px solid #f2f2f2;
+    max-width: 400px;
+}
+
+.search-results a{
+    text-decoration: none;
+    color: #333;
+}
+
+.result-item:hover {
+    background: #f2f2f2;
+    cursor: pointer;
+}
+
+.result-item span,
+.result-item a {
+    display: inline-block;
+}
+
+.result-item span.loc-type {
+    background: #149999;
+    color: #fff;
+    padding: 0px 7px 2px 7px;
+    border-radius: 3px;
+    font-size: 13px;
+}
+
+.result-item span.loc-title {
+    font-size: 15px;
+}
+
+img.currentLoc {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 999;
+    width: 32px;
+    background: rgba(242, 209, 99, 0.8);
+    padding: 7px;
+    border-radius: 30px;
+    box-shadow: 1px 2px 13px #777;
+}
+
+img.currentLoc:hover {
+    cursor: pointer;
     opacity: 0.7;
 }

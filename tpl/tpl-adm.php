@@ -36,6 +36,8 @@
         border-collapse: collapse;
     }
     .statusToggle {
+        min-width: 65px;
+        text-align: center;
         background: #eee;
         color: #686868;
         border: 0;
@@ -113,7 +115,9 @@
             <td class="text-center"><?= $loc->lat?></td>
             <td class="text-center"><?= $loc->lng?></td>
             <td>
-                <button class="statusToggle <?= $loc->verified ? 'active' : ' ' ?>" data-loc='<?= $loc->id?>'>تایید</button> 
+                <button class="statusToggle <?= $loc->verified ? 'active' : ' ' ?>" data-loc='<?= $loc->id?>'> 
+                <?= $loc->verified ? 'فعال' : 'غیرفعال ' ?>
+                </button> 
                 <button class="preview" data-loc='<?= $loc->id?>'>👁️‍🗨️</button> 
             </td>
         </tr>
@@ -154,6 +158,12 @@
                 // alert(response);
                 if(response == 1){
                     btn.toggleClass('active')
+                    if(btn.hasClass("active")){
+                        btn.text("فعال");
+                    }
+                    else {
+                        btn.text("غیر فعال");
+                    }
                 }
               }
            });
